@@ -1,0 +1,16 @@
+src/modele/CompositionImage.java
+src/modele/GenerateurImage.java
+src/modele/ProprietesImage.java
+src/modele/OutilsImage.java
+src/modele/Texte.java
+
+src/vue/Fenetre.java
+src/vue/PanelApercu.java
+src/vue/PanelBg.java
+src/vue/PanelTxt.java
+src/vue/PanelDouble.java
+src/vue/PanelSelection.java
+src/vue/SaisieRGB.java
+src/vue/SaisieTexte.java
+
+src/Controleur.java
