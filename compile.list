@@ -13,4 +13,6 @@ src/vue/PanelSelection.java
 src/vue/SaisieRGB.java
 src/vue/SaisieTexte.java
 
+src/vue/evenement/PanelSaisieListener.java
+
 src/Controleur.java

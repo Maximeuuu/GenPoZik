@@ -2,11 +2,13 @@ package genpozik.vue;
 
 import genpozik.modele.Texte;
 import genpozik.Controleur;
+import genpozik.vue.evenement.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class PanelTxt extends JPanel implements ActionListener
+public class PanelTxt extends JPanel implements PanelSaisieListener
 {
 	private Controleur ctrl;
 
@@ -28,9 +30,14 @@ public class PanelTxt extends JPanel implements ActionListener
 		this.add( this.saisieTexteAuteur );
 		this.add( this.saisieTexteTitre );
 		this.add( this.saisieTexteDate );
+
+		// Activation des composants
+		this.saisieTexteAuteur.setPanelSaisieListener(this);
+		this.saisieTexteTitre.setPanelSaisieListener(this);
+		this.saisieTexteDate.setPanelSaisieListener(this);
 	}
 
-	public void actionPerformed( ActionListener e )
+	public void valueChanged()
 	{
 		Texte texteA =  this.saisieTexteAuteur.getTexte();
 		Texte texteT = this.saisieTexteTitre.getTexte();

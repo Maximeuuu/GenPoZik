@@ -1,13 +1,20 @@
 package genpozik.vue;
 
+import genpozik.vue.evenement.*;
+
 import java.util.regex.Pattern;
 import javax.swing.text.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import javax.swing.event.*;
 
-public class SaisieRGB extends JPanel
+public class SaisieRGB extends JPanel implements DocumentListener
 {
 	private static final Color COULEUR_DEFAUT = new Color(255,255,255);
+
+	private PanelSaisieListener panelSaisieListener;
+
     private JTextField txtRouge;
     private JTextField txtVert;
     private JTextField txtBleu;
@@ -26,6 +33,11 @@ public class SaisieRGB extends JPanel
         this.add(txtRouge);
         this.add(txtVert);
         this.add(txtBleu);
+
+		//Activation
+		this.txtRouge.getDocument().addDocumentListener( this );
+		this.txtVert.getDocument().addDocumentListener( this );
+		this.txtBleu.getDocument().addDocumentListener( this );
     }
 
 	private JTextField RGBTextField()
@@ -49,6 +61,30 @@ public class SaisieRGB extends JPanel
 		return COULEUR_DEFAUT;
 	}
 
+	public void setPanelSaisieListener( PanelSaisieListener listener )
+	{
+		this.panelSaisieListener = listener;
+	}
+
+	@Override
+    public void insertUpdate(DocumentEvent e) {
+		System.out.println("Changement dans panel SaisieRGB");
+		this.panelSaisieListener.valueChanged();
+        // Le texte a été inséré
+    }
+
+    @Override
+    public void removeUpdate(DocumentEvent e) {
+		System.out.println("Changement dans panel SaisieRGB");
+		this.panelSaisieListener.valueChanged();
+        // Le texte a été supprimé
+    }
+
+    @Override
+    public void changedUpdate(DocumentEvent e) {
+        System.out.println("Changement dans panel SaisieRGB");
+		this.panelSaisieListener.valueChanged();
+    }
 
 	/**
 	 * @author ChatGPT
