@@ -83,16 +83,16 @@ public class CompositionImage extends BufferedImage
 
 	private void placerTexte()
 	{
-		this.placerTexte( this.proprietes.getAuteur(), 20,200 );
-		this.placerTexte( this.proprietes.getTitre(), 200,200 );
-		this.placerTexte( this.proprietes.getDate(), 300,20 );
+		this.placerTexte( this.proprietes.getAuteur() );
+		this.placerTexte( this.proprietes.getTitre() );
+		this.placerTexte( this.proprietes.getDate() );
 	}
 
-	private void placerTexte( Texte texte, int x, int y )
+	private void placerTexte( Texte texte )
 	{
 		this.toile.setColor( texte.getCouleur() );
 		this.toile.setFont( texte.getFont() );
-		this.toile.drawString( texte.getTexte(), x, y);
+		this.toile.drawString( texte.getTexte(), (int)(texte.getPosition().getX()), (int)(texte.getPosition().getY()) );
 	}
 
 	private void enregistrer()

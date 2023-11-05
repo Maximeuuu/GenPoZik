@@ -12,6 +12,7 @@ src/vue/PanelTxt.java
 src/vue/PanelDouble.java
 src/vue/PanelSelection.java
 src/vue/SaisieRGB.java
+src/vue/SaisiePos.java
 src/vue/SaisieTexte.java
 
 src/vue/evenement/PanelSaisieListener.java

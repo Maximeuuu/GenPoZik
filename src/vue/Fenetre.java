@@ -14,6 +14,7 @@ public class Fenetre extends JFrame
 		super();
 		this.ctrl = ctrl;
 		this.setSize( 700,600 );
+		this.setTitle("GenPoZik");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

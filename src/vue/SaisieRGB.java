@@ -81,7 +81,6 @@ public class SaisieRGB extends JPanel implements ChangeListener
 	@Override
 	public void stateChanged(ChangeEvent e)
 	{
-		System.out.println("Changement dans panel SaisieRGB");
 		this.panelSaisieListener.valueChanged();
 	}
 

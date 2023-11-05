@@ -16,29 +16,32 @@ public class SaisieTexte extends JPanel implements DocumentListener, PanelSaisie
 	private JTextField txtTexte;
 	private JTextField txtTaille;
 	private SaisieRGB  saisieRGB;
-	//saisieCoordonnees
+	private SaisiePos  saisiePosition;
 
     public SaisieTexte( String titre )
 	{
 		// Configuration
-        this.setLayout( new GridLayout(4, 1) );
+        this.setLayout( new GridLayout(5, 1) );
 
 		// Creation des composants
         JLabel lbl = new JLabel( titre );
         this.txtTexte  = new JTextField();
         this.txtTaille = new JTextField();
         this.saisieRGB = new SaisieRGB();
+		this.saisiePosition = new SaisiePos();
 
 		// Positionnement des composants
         this.add(lbl);
 		this.add( panelSaisie( "Texte", this.txtTexte ) );
 		this.add( panelSaisie( "Taille", this.txtTaille ) );
 		this.add( panelSaisie( "Couleur", this.saisieRGB ) );
+		this.add( panelSaisie( "Position", this.saisiePosition ) );
 
 		// Activation des composants
 		this.txtTexte.getDocument().addDocumentListener(this);
         this.txtTaille.getDocument().addDocumentListener(this);
         this.saisieRGB.setPanelSaisieListener(this);
+		this.saisiePosition.setPanelSaisieListener(this);
     }
 
 	private JPanel panelSaisie( String type, Component composant )
@@ -62,6 +65,7 @@ public class SaisieTexte extends JPanel implements DocumentListener, PanelSaisie
 		catch( Exception e ){}
 
 		texte.setCouleur( this.saisieRGB.getCouleur() );
+		texte.setPosition( this.saisiePosition.getPosition() );
 		return texte;
 	}
 
@@ -73,27 +77,26 @@ public class SaisieTexte extends JPanel implements DocumentListener, PanelSaisie
 	@Override
 	public void valueChanged()
 	{
-		System.out.println("Changement dans panel SaisieText via SaisieRGB");
 		this.panelSaisieListener.valueChanged();
 	}
 
 	@Override
-    public void insertUpdate(DocumentEvent e) {
-		System.out.println("Changement dans panel SaisieText");
+    public void insertUpdate(DocumentEvent e)
+	{
 		this.panelSaisieListener.valueChanged();
         // Le texte a été inséré
     }
 
     @Override
-    public void removeUpdate(DocumentEvent e) {
-		System.out.println("Changement dans panel SaisieText");
+    public void removeUpdate(DocumentEvent e)
+	{
 		this.panelSaisieListener.valueChanged();
         // Le texte a été supprimé
     }
 
     @Override
-    public void changedUpdate(DocumentEvent e) {
-		System.out.println("Changement dans panel SaisieText");
+    public void changedUpdate(DocumentEvent e)
+	{
 		this.panelSaisieListener.valueChanged();
 		//fireActionPerformed
     }

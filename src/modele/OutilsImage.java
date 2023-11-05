@@ -46,7 +46,6 @@ public final class OutilsImage
 			for (int y = 0; y < height; y++)
 			{
 				Color pixelColor = new Color(image.getRGB(x, y));
-				//System.out.println(image.getRGB(x, y));
 				if (image.getRGB(x, y) != 0)// Ignore les pixels transparents
 				{
 					resultImage.setRGB(x, y, couleur.getRGB());

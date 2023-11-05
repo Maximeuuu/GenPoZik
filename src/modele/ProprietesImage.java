@@ -17,7 +17,7 @@ public class ProprietesImage
 	private Color couleurFg;
 	private File cheminImageModeleFg;
 
-	private Texte auteur;
+	private Texte auteur; //Remplacer par la suite par une liste de Texte
 	private Texte titre;
 	private Texte date;
 

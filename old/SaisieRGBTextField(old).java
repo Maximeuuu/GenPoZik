@@ -81,21 +81,18 @@ public class SaisieRGB extends JPanel implements DocumentListener
 
 	@Override
     public void insertUpdate(DocumentEvent e) {
-		System.out.println("Changement dans panel SaisieRGB");
 		this.panelSaisieListener.valueChanged();
         // Le texte a été inséré
     }
 
     @Override
     public void removeUpdate(DocumentEvent e) {
-		System.out.println("Changement dans panel SaisieRGB");
 		this.panelSaisieListener.valueChanged();
         // Le texte a été supprimé
     }
 
     @Override
     public void changedUpdate(DocumentEvent e) {
-        System.out.println("Changement dans panel SaisieRGB");
 		this.panelSaisieListener.valueChanged();
     }
 

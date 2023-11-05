@@ -43,9 +43,10 @@ public class PanelTxt extends JPanel implements PanelSaisieListener
 
 	public void valueChanged()
 	{
-		Texte texteA =  this.saisieTexteAuteur.getTexte();
+		Texte texteA = this.saisieTexteAuteur.getTexte();
 		Texte texteT = this.saisieTexteTitre.getTexte();
 		Texte texteD = this.saisieTexteDate.getTexte();
+
 		this.ctrl.majTxt( texteA, texteT, texteD );
 	}
 }

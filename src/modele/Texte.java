@@ -1,6 +1,7 @@
 package genpozik.modele;
 
 import java.awt.Color;
+import java.awt.Point;
 import java.awt.Font;
 /**
  * @author Maximeuuu
@@ -8,38 +9,47 @@ import java.awt.Font;
  */
 public class Texte
 {
+	private static final String TEXTE_DEFAUT = "";
+	private static final int TAILLE_DEFAUT = 0;
+	private static final Color COULEUR_DEFAUT = new Color(255,255,255);
+	private static final Point POSITION_DEFAUT = new Point(0,0);
+
 	private String texte;
 	private int taille;
 	private Color couleur;
 	private Font font;
-	//posX, posY, police....
+	private Point position; //pb avec Point ? remplacer par X et Y ?
+	//police....
 
-	public Texte( String texte, int taille, Color couleur )
+	public Texte( String texte, int taille, Color couleur, Point position )
 	{
 		this.texte = texte;
 		this.taille = taille;
 		this.couleur = couleur;
+		this.position = position;
 		this.font = new Font("Liberation", Font.PLAIN, taille );
 	}
 
 	public Texte( String texte )
 	{
-		this( texte, 0, new Color(255,255,255) );
+		this( texte, TAILLE_DEFAUT, COULEUR_DEFAUT, POSITION_DEFAUT );
 	}
 
 	public Texte()
 	{
-		this( "" );
+		this( TEXTE_DEFAUT );
 	}
 
 	public void setTexte( String texte ){ this.texte = texte; }
 	public void setTaille( int taille ){ this.taille = taille; this.font = new Font("Liberation", Font.PLAIN, taille ); }
 	public void setCouleur( Color couleur ){ this.couleur = couleur; }
+	public void setPosition( Point position ){ this.position = position; }
 	private void setFont( Font font ){ this.font = font; }
 
 	public String getTexte(){ return this.texte; }
 	public int getTaille(){ return this.taille; }
 	public Color getCouleur(){ return this.couleur; }
+	public Point getPosition(){ return this.position; }
 	public Font getFont(){ return this.font; }
 
 
@@ -69,6 +79,6 @@ public class Texte
 
 	public String toString()
 	{
-		return "Texte : " + this.texte + " ["+this.taille+"] " + this.couleur;
+		return "Texte : " + this.texte + " ["+this.taille+"] " + this.couleur + "(" + this.position + ")";
 	}
 }
