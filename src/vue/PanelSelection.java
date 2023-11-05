@@ -5,35 +5,22 @@ import javax.swing.*;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import java.awt.*;
 
-public class PanelSelection extends JPanel
+public class PanelSelection extends JTabbedPane
 {
 	private Controleur ctrl;
-	private JTabbedPane panelTab;
 
 	public PanelSelection( Controleur ctrl )
 	{
+		// Configuration
 		this.ctrl = ctrl;
-
 		this.setPreferredSize( new Dimension(400,400) );
+		this.setUI( new CustomTabbedPaneUI() ); //HorizontalTabbedPaneUI
+		this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 
-		this.panelTab = new JTabbedPane();
-		this.panelTab.setUI( new CustomTabbedPaneUI() ); //HorizontalTabbedPaneUI
-		this.panelTab.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-		this.panelTab.setPreferredSize( new Dimension(400,400) );
-
-		JPanel pnlRdm = new JPanel( new FlowLayout(FlowLayout.LEADING) );
-		pnlRdm.add( new PanelBg( this.ctrl ) );
-		this.panelTab.add( "1 - BG",  pnlRdm);
-
-		pnlRdm = new JPanel( new FlowLayout(FlowLayout.LEADING) );
-		pnlRdm.add( new PanelFg( this.ctrl ) );
-		this.panelTab.add( "2 - FG", pnlRdm );
-
-		pnlRdm = new JPanel( new FlowLayout(FlowLayout.LEADING) );
-		pnlRdm.add( new PanelTxt( this.ctrl ) );
-		this.panelTab.add( "3 - TXT", pnlRdm );
-
-		this.add( this.panelTab );
+		// Creation et positionnement des composants
+		this.add( "1 - BG", new PanelBg(this.ctrl) );
+		this.add( "2 - FG", new PanelFg(this.ctrl) );
+		this.add( "3 - TXT", new PanelTxt(this.ctrl) );
 	}
 
 	/**

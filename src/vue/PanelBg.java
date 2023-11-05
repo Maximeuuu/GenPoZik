@@ -20,17 +20,20 @@ public class PanelBg extends JPanel implements PanelSaisieListener
 
 	public PanelBg( Controleur ctrl )
 	{
+		// Configuration
 		this.ctrl = ctrl;
-		this.setLayout( new GridLayout(3,1) );
+		this.setLayout( new FlowLayout(FlowLayout.LEADING) );
 
 		// Création des composants
+		JPanel panelGrille = new JPanel( new GridLayout(3,1) );
 		this.saisieCouleur1 = new SaisieRGB();
 		this.saisieCouleur2  = new SaisieRGB();
 
-		// Ajout des composants
-		this.add( new JLabel("Dégradé couleurs : ") );
-		this.add( this.saisieCouleur1 );
-		this.add( this.saisieCouleur2 );
+		// Positionnement des composants
+		panelGrille.add( new JLabel("Dégradé couleurs : ") );
+		panelGrille.add( this.saisieCouleur1 );
+		panelGrille.add( this.saisieCouleur2 );
+		this.add( panelGrille );
 
 		// Activation des composants
 		this.saisieCouleur1.setPanelSaisieListener(this);

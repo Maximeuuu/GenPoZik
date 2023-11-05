@@ -10,17 +10,20 @@ public class Fenetre extends JFrame
 
 	public Fenetre( Controleur ctrl )
 	{
+		// Configuration
 		super();
-
 		this.ctrl = ctrl;
-
 		this.setSize( 850,500 );
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+		// Création du panel
 		this.panel = new PanelDouble( this.ctrl );
+
+		// Positionnement du panel
 		this.add( this.panel );
 
+		// Activation
 		this.setVisible(true);
 	}
 

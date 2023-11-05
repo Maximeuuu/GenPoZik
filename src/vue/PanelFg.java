@@ -18,15 +18,18 @@ public class PanelFg extends JPanel implements PanelSaisieListener
 
 	public PanelFg( Controleur ctrl )
 	{
+		// Configuration
 		this.ctrl = ctrl;
-		this.setLayout( new GridLayout(2,1) );
+		this.setLayout( new FlowLayout(FlowLayout.LEADING) );
 
 		// Création des composants
+		JPanel panelGrille = new JPanel( new GridLayout(2,1) );
 		this.saisieCouleur = new SaisieRGB( true );
 
-		// Ajout des composants
-		this.add( new JLabel("Couleur : ") );
-		this.add( this.saisieCouleur );
+		// Positionnement des composants
+		panelGrille.add( new JLabel("Couleur : ") );
+		panelGrille.add( this.saisieCouleur );
+		this.add( panelGrille );
 
 		// Activation des composants
 		this.saisieCouleur.setPanelSaisieListener(this);

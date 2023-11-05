@@ -18,18 +18,21 @@ public class PanelTxt extends JPanel implements PanelSaisieListener
 
 	public PanelTxt( Controleur ctrl )
 	{
+		// Configuration
 		this.ctrl = ctrl;
-		this.setLayout( new GridLayout(3,1) );
+		this.setLayout( new FlowLayout(FlowLayout.LEADING) );
 
 		// Création des composants
-		this.saisieTexteAuteur = new SaisieTexte("Auteur");
-		this.saisieTexteTitre  = new SaisieTexte("Titre");
+		JPanel panelGrille = new JPanel( new GridLayout(3,1) );
+		this.saisieTexteAuteur = new SaisieTexte("Auteur : ");
+		this.saisieTexteTitre  = new SaisieTexte("Titre : ");
 		this.saisieTexteDate   = new SaisieTexte("Date : ");
 
-		// Ajout des composants
-		this.add( this.saisieTexteAuteur );
-		this.add( this.saisieTexteTitre );
-		this.add( this.saisieTexteDate );
+		// Positionnement des composants
+		panelGrille.add( this.saisieTexteAuteur );
+		panelGrille.add( this.saisieTexteTitre );
+		panelGrille.add( this.saisieTexteDate );
+		this.add( panelGrille );
 
 		// Activation des composants
 		this.saisieTexteAuteur.setPanelSaisieListener(this);
@@ -42,6 +45,6 @@ public class PanelTxt extends JPanel implements PanelSaisieListener
 		Texte texteA =  this.saisieTexteAuteur.getTexte();
 		Texte texteT = this.saisieTexteTitre.getTexte();
 		Texte texteD = this.saisieTexteDate.getTexte();
-		this.ctrl.maj( texteA, texteT, texteD );
+		this.ctrl.majTxt( texteA, texteT, texteD );
 	}
 }

@@ -20,18 +20,22 @@ public class SaisieTexte extends JPanel implements DocumentListener, PanelSaisie
 
     public SaisieTexte( String titre )
 	{
+		// Configuration
         this.setLayout( new GridLayout(4, 1) );
 
+		// Creation des composants
         JLabel lbl = new JLabel( titre );
         this.txtTexte  = new JTextField();
         this.txtTaille = new JTextField();
         this.saisieRGB = new SaisieRGB();
 
+		// Positionnement des composants
         this.add(lbl);
 		this.add( panelSaisie( "Texte", this.txtTexte ) );
 		this.add( panelSaisie( "Taille", this.txtTaille ) );
 		this.add( panelSaisie( "Couleur", this.saisieRGB ) );
 
+		// Activation des composants
 		this.txtTexte.getDocument().addDocumentListener(this);
         this.txtTaille.getDocument().addDocumentListener(this);
         this.saisieRGB.setPanelSaisieListener(this);

@@ -35,7 +35,7 @@ public class Controleur
 		this.vue.maj();
 	}
 
-	public void maj( Texte texteA, Texte texteT, Texte texteD ) //majTxt
+	public void majTxt( Texte texteA, Texte texteT, Texte texteD )
 	{
 		this.modele.setAuteur( texteA );
 		this.modele.setTitre( texteT );
