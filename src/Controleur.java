@@ -25,6 +25,11 @@ public class Controleur
 		return this.modele.getImage();
 	}
 
+	public void genererImage( File fichier )
+	{
+		this.modele.genererImage( fichier );
+	}
+
 	public static void main( String[] args )
 	{
 		new Controleur();

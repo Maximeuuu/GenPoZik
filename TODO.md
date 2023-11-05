@@ -1,0 +1,20 @@
+- meilleur mode selection image
+- liste image de modele par défaut
+- un onglet par Texte ou creer une liste extensible de 1 à 10
+- meilleure gestion du scrollbar
+- bords des panels avec marge
+- selecteur de couleur avec pipette
+- deplacer les texte avec la souris
+- valeurs par défaut
+- sauvegarder la config
+- optimiser le code lorsqu'une image est utilisée pour le background
+- changements de mode de dégradé
+- dégradé sur le FG
+- possibilite de changer police -> List ?
+- possibilite de mettre en gras -> checkbox ?
+- desactiver les images avec checkbox ?
+- generer l'image sur une plus grande pour plus de détails
+- mettre des effets d'adoucicement ?
+- changer emplacement par défaut de la sauvegarde
+- nom du fichier pour la sauvegarde : auteur-titre-date[-numero].png !!
+- repertoire de sauvegarde -> dans le projet

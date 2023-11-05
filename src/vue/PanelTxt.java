@@ -20,23 +20,24 @@ public class PanelTxt extends JPanel implements PanelSaisieListener
 	{
 		// Configuration
 		this.ctrl = ctrl;
-		this.setPreferredSize( PanelSelection.DIMENSION_TAB );
-		this.setLayout( new FlowLayout(FlowLayout.LEADING) );
+		//this.setPreferredSize( PanelSelection.DIMENSION_TAB );
+		this.setLayout( new FlowLayout(FlowLayout.LEFT) );
 
 		// Création d'un JScrollPane pour permettre le défilement
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setPreferredSize(PanelSelection.DIMENSION_TAB);
 
 		// Création des composants
-		JPanel panelGrille = new JPanel( new GridLayout(3,1) );
-		this.saisieTexteAuteur = new SaisieTexte("Auteur : ");
-		this.saisieTexteTitre  = new SaisieTexte("Titre : ");
-		this.saisieTexteDate   = new SaisieTexte("Date : ");
+		JPanel panelGrille = new JPanel( new GridLayout(4,1) );
+		this.saisieTexteAuteur = new SaisieTexte(" 1. Auteur");
+		this.saisieTexteTitre  = new SaisieTexte(" 2. Titre");
+		this.saisieTexteDate   = new SaisieTexte(" 3. Date");
 
 		// Positionnement des composants
 		panelGrille.add( this.saisieTexteAuteur );
 		panelGrille.add( this.saisieTexteTitre );
 		panelGrille.add( this.saisieTexteDate );
+		panelGrille.add( new JLabel("") ); //nécessaire car JScrollPane pas assez grand ?
 		this.add( panelGrille );
 
 		// Ajout du panelGrille dans le JScrollPane

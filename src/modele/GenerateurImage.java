@@ -1,6 +1,7 @@
 package genpozik.modele;
-import java.awt.image.BufferedImage;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 public class GenerateurImage extends ProprietesImage
 {
@@ -13,5 +14,6 @@ public class GenerateurImage extends ProprietesImage
 	}
 
 	public void maj(){ this.image.maj(); }
-	public BufferedImage getImage(){ return this.image.getAppercu();}
+	public BufferedImage getImage(){ return this.image.getAppercu(); }
+	public void genererImage( File fichier ){ this.image.enregistrer( fichier ); }
 }

@@ -15,7 +15,7 @@ public class PanelSelection extends JTabbedPane //re-placer un JPanel contenant 
 	{
 		// Configuration
 		this.ctrl = ctrl;
-		this.setPreferredSize( PanelSelection.DIMENSION_TAB ); //hauteur marche pas ?
+		this.setPreferredSize( PanelSelection.DIMENSION_TAB );
 		this.setUI( new CustomTabbedPaneUI() ); //HorizontalTabbedPaneUI
 		this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 

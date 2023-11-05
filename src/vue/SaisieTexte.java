@@ -22,6 +22,7 @@ public class SaisieTexte extends JPanel implements DocumentListener, PanelSaisie
 	{
 		// Configuration
         this.setLayout( new GridLayout(5, 1) );
+		this.setBackground( new Color(255,255,255,122) );
 
 		// Creation des composants
         JLabel lbl = new JLabel( titre );

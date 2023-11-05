@@ -95,14 +95,13 @@ public class CompositionImage extends BufferedImage
 		this.toile.drawString( texte.getTexte(), (int)(texte.getPosition().getX()), (int)(texte.getPosition().getY()) );
 	}
 
-	private void enregistrer()
+	public void enregistrer( File fichier )
 	{
-		try {
-            File outputImage = new File("image.png");
-            ImageIO.write(getAppercu(), "png", outputImage);
+		try
+		{
+            ImageIO.write( this.getAppercu(), "png", fichier );
             System.out.println("L'image a été enregistrée avec succès.");
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+		catch (IOException e) { e.printStackTrace(); }
 	}
 }
