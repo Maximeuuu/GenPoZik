@@ -35,11 +35,25 @@ public class Controleur
 		this.vue.maj();
 	}
 
-	public void maj( Texte texteA, Texte texteT, Texte texteD )
+	public void maj( Texte texteA, Texte texteT, Texte texteD ) //majTxt
 	{
 		this.modele.setAuteur( texteA );
 		this.modele.setTitre( texteT );
 		this.modele.setDate( texteD );
+		this.majIHM();
+	}
+
+	public void majBg( Color coul1, Color coul2 )
+	{
+		this.modele.setCouleurBg1( coul1 );
+		this.modele.setCouleurBg2( coul2 );
+		this.modele.setImageBgMode( false ); //checkbox par la suite ?
+		this.majIHM();
+	}
+
+	public void majFg( Color coul )
+	{
+		this.modele.setCouleurFg( coul );
 		this.majIHM();
 	}
 

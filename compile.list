@@ -7,6 +7,7 @@ src/modele/Texte.java
 src/vue/Fenetre.java
 src/vue/PanelApercu.java
 src/vue/PanelBg.java
+src/vue/PanelFg.java
 src/vue/PanelTxt.java
 src/vue/PanelDouble.java
 src/vue/PanelSelection.java

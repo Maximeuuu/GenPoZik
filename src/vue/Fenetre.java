@@ -16,6 +16,7 @@ public class Fenetre extends JFrame
 
 		this.setSize( 850,500 );
 		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		this.panel = new PanelDouble( this.ctrl );
 		this.add( this.panel );
