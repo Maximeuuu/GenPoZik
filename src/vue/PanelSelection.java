@@ -5,16 +5,17 @@ import javax.swing.*;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import java.awt.*;
 
-public class PanelSelection extends JTabbedPane
+public class PanelSelection extends JTabbedPane //re-placer un JPanel contenant le JTabbedPane pour les pb de hauteur ?
 {
 	private Controleur ctrl;
+// problème avec les dimensiosn verticales
 	public static final Dimension DIMENSION_TAB = new Dimension(250,400);
 
 	public PanelSelection( Controleur ctrl )
 	{
 		// Configuration
 		this.ctrl = ctrl;
-		this.setPreferredSize( PanelSelection.DIMENSION_TAB );
+		this.setPreferredSize( PanelSelection.DIMENSION_TAB ); //hauteur marche pas ?
 		this.setUI( new CustomTabbedPaneUI() ); //HorizontalTabbedPaneUI
 		this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 
