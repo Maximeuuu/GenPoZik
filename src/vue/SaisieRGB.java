@@ -25,7 +25,7 @@ public class SaisieRGB extends JPanel implements ChangeListener
 	{
 		// Configuration
 		this.opaciteActive = opaciteActive;
-		this.setLayout( new GridLayout(1, 4) );
+		this.setLayout( new FlowLayout( FlowLayout.LEFT ) );
 
 		// Création des composants
         this.spRouge = RGBSpinner();
@@ -34,10 +34,10 @@ public class SaisieRGB extends JPanel implements ChangeListener
 		if( opaciteActive ){ this.spOpacite = RGBSpinner(); }
 
 		// Positionnement des composants
-        this.add(this.spRouge);
-        this.add(this.spVert);
-        this.add(this.spBleu);
-		if( opaciteActive ){ this.add(this.spOpacite); }
+		this.add( new JLabel("R:") ); this.add(this.spRouge);
+		this.add( new JLabel("  V:") ); this.add(this.spVert);
+		this.add( new JLabel("  B:") ); this.add(this.spBleu);
+		if( opaciteActive ){ this.add( new JLabel("  O:") ); this.add(this.spOpacite); }
 
 		// Activation des composants
 		this.spRouge.addChangeListener( this );

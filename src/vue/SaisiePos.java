@@ -22,15 +22,16 @@ public class SaisiePos extends JPanel implements ChangeListener
 	public SaisiePos()
 	{
 		// Configuration
-		this.setLayout( new GridLayout(1, 3) );
+		this.setLayout( new FlowLayout( FlowLayout.LEFT ) );
 
 		// Création des composants
         this.spPosX = PosSpinner();
         this.spPosY = PosSpinner();
 
 		// Positionnement des composants
+		this.add( new JLabel("x:") );
         this.add(this.spPosX);
-        this.add( new JLabel(":") );
+        this.add( new JLabel("  y:") );
         this.add(this.spPosY);
 
 		// Activation des composants

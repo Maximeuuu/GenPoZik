@@ -22,8 +22,17 @@ public class PanelDouble extends JPanel
 		this.panelSelection = new PanelSelection( this.ctrl );
 
 		// Positionnement des composants
-		this.add( this.panelApercu, BorderLayout.EAST );
-		this.add( this.panelSelection, BorderLayout.WEST );
+		JPanel pnlTmp = new JPanel( new FlowLayout() );
+		pnlTmp.setPreferredSize( new Dimension(400,400) );
+		pnlTmp.add( this.panelApercu );
+		this.add( pnlTmp, BorderLayout.EAST );
+
+		pnlTmp = new JPanel( new FlowLayout() );
+		pnlTmp.setPreferredSize( new Dimension(400,400) );
+		pnlTmp.add( this.panelSelection );
+		this.add( pnlTmp, BorderLayout.WEST);
+
+		this.add( new JButton("bouton vide"), BorderLayout.SOUTH );
 	}
 
 	public void maj()

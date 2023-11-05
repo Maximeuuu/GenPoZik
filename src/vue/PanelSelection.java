@@ -9,7 +9,7 @@ public class PanelSelection extends JTabbedPane //re-placer un JPanel contenant 
 {
 	private Controleur ctrl;
 // problème avec les dimensiosn verticales
-	public static final Dimension DIMENSION_TAB = new Dimension(250,400);
+	public static final Dimension DIMENSION_TAB = new Dimension(350,400);
 
 	public PanelSelection( Controleur ctrl )
 	{

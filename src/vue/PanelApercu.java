@@ -15,15 +15,13 @@ public class PanelApercu extends JPanel
 		// Configuration
 		this.ctrl = ctrl;
 		this.setLayout( new OverlayLayout(this) );
+		this.setPreferredSize( new Dimension(400,400) );
 
 		// Creation des composants
 		this.lblImageFond = new JLabel( new ImageIcon( Controleur.REP_IMAGE+"vide.png" ) );
-		this.lblImageFond.setPreferredSize( new Dimension(400,400) );
 		this.lblImageGeneree = new JLabel( new ImageIcon( this.ctrl.getImage() ) );
-		this.lblImageGeneree.setPreferredSize( new Dimension(400,400) );
 
 		// Positionnement des composants
-
 		this.add( this.lblImageGeneree );
 		this.add( this.lblImageFond );
 	}
