@@ -4,17 +4,19 @@ import genpozik.modele.Texte;
 import genpozik.Controleur;
 import genpozik.vue.evenement.*;
 
+import java.io.File;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.*;
 
-public class PanelBg extends JPanel implements PanelSaisieListener
+public class PanelBg extends JPanel implements PanelSaisieListener, ActionListener
 {
 	private Controleur ctrl;
 
 	private SaisieRGB saisieCouleur1;
 	private SaisieRGB saisieCouleur2;
-	//BtnSelectionImage
+	private JButton btnSelectionImage;
 	//directionDegrade
 	//typeDegrade
 
@@ -26,19 +28,40 @@ public class PanelBg extends JPanel implements PanelSaisieListener
 		this.setLayout( new FlowLayout(FlowLayout.LEADING) );
 
 		// Création des composants
-		JPanel panelGrille = new JPanel( new GridLayout(3,1) );
+		JPanel panelCouleurs = new JPanel( new GridLayout(3,1) );
 		this.saisieCouleur1 = new SaisieRGB();
-		this.saisieCouleur2  = new SaisieRGB();
+		this.saisieCouleur2 = new SaisieRGB();
+
+		JPanel panelImage = new JPanel( new GridLayout(2,1) );
+		this.btnSelectionImage = new JButton("Selectionner");
 
 		// Positionnement des composants
-		panelGrille.add( new JLabel("Dégradé couleurs : ") );
-		panelGrille.add( this.saisieCouleur1 );
-		panelGrille.add( this.saisieCouleur2 );
-		this.add( panelGrille );
+		panelCouleurs.add( new JLabel("Dégradé couleurs : ") );
+		panelCouleurs.add( this.saisieCouleur1 );
+		panelCouleurs.add( this.saisieCouleur2 );
+		this.add( panelCouleurs );
+
+		panelImage.add( new JLabel("Image de fond : ") );
+		panelImage.add( this.btnSelectionImage );
+		this.add( panelImage );
 
 		// Activation des composants
 		this.saisieCouleur1.setPanelSaisieListener(this);
 		this.saisieCouleur2.setPanelSaisieListener(this);
+		this.btnSelectionImage.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed( ActionEvent e )
+	{
+		JFileChooser fileChooser = new FileChooserImage();
+		int returnValue = fileChooser.showOpenDialog(null);
+
+		if (returnValue == JFileChooser.APPROVE_OPTION)
+		{
+			File selectedFile = fileChooser.getSelectedFile();
+			this.ctrl.majBg( selectedFile );
+		}
 	}
 
 	public void valueChanged()

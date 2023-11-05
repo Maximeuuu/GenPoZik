@@ -4,16 +4,18 @@ import genpozik.modele.Texte;
 import genpozik.Controleur;
 import genpozik.vue.evenement.*;
 
+import java.io.File;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.*;
 
-public class PanelFg extends JPanel implements PanelSaisieListener
+public class PanelFg extends JPanel implements PanelSaisieListener, ActionListener
 {
 	private Controleur ctrl;
 
 	private SaisieRGB saisieCouleur;
-	//BtnSelectionImage
+	private JButton btnSelectionImage;
 	//listeFormesBasiques
 
 	public PanelFg( Controleur ctrl )
@@ -24,16 +26,37 @@ public class PanelFg extends JPanel implements PanelSaisieListener
 		this.setLayout( new FlowLayout(FlowLayout.LEADING) );
 
 		// Création des composants
-		JPanel panelGrille = new JPanel( new GridLayout(2,1) );
+		JPanel panelCouleur = new JPanel( new GridLayout(2,1) );
 		this.saisieCouleur = new SaisieRGB( true );
 
+		JPanel panelImage = new JPanel( new GridLayout(2,1) );
+		this.btnSelectionImage = new JButton("Selectionner");
+
 		// Positionnement des composants
-		panelGrille.add( new JLabel("Couleur : ") );
-		panelGrille.add( this.saisieCouleur );
-		this.add( panelGrille );
+		panelCouleur.add( new JLabel("Couleur : ") );
+		panelCouleur.add( this.saisieCouleur );
+		this.add( panelCouleur );
+
+		panelImage.add( new JLabel("Image de forme : ") );
+		panelImage.add( this.btnSelectionImage );
+		this.add( panelImage );
 
 		// Activation des composants
 		this.saisieCouleur.setPanelSaisieListener(this);
+		this.btnSelectionImage.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed( ActionEvent e )
+	{
+		JFileChooser fileChooser = new FileChooserImage();
+		int returnValue = fileChooser.showOpenDialog(null);
+
+		if (returnValue == JFileChooser.APPROVE_OPTION)
+		{
+			File selectedFile = fileChooser.getSelectedFile();
+			this.ctrl.majFg( selectedFile );
+		}
 	}
 
 	public void valueChanged()

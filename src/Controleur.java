@@ -52,9 +52,22 @@ public class Controleur
 		this.majIHM();
 	}
 
+	public void majBg( File fichier )
+	{
+		this.modele.setImageBgMode( true ); //checkbox par la suite ?
+		this.modele.setCheminImageBg( fichier );
+		this.majIHM();
+	}
+
 	public void majFg( Color coul )
 	{
 		this.modele.setCouleurFg( coul );
+		this.majIHM();
+	}
+
+	public void majFg( File fichier )
+	{
+		this.modele.setCheminImageModeleFg( fichier );
 		this.majIHM();
 	}
 
