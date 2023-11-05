@@ -38,6 +38,8 @@ ou
 - selection RGBA de la couleur de premier plan
 - possibilité de selectionner un modèle (400x400) en png
 
+![modele](data/modele.png "un exemple de modèle")
+
 *remarque : une image modèle doit être bicouleur : transparent et noir*
 
 ### c. "3 - TXT"
@@ -51,6 +53,8 @@ ou
 ## 2. Image d'apperçu
 
 -> apperçu de l'image à générer
+
+![appercu](data/generation/test.png "apperçu")
 
 possibilité de sauvegarder l'image avec le bouton "Générer"
 1. choisir un nom de fichier : "image.png"
