@@ -13,7 +13,7 @@ public class Fenetre extends JFrame
 		// Configuration
 		super();
 		this.ctrl = ctrl;
-		this.setSize( 850,500 );
+		this.setSize( 700,600 );
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

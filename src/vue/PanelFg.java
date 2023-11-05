@@ -20,6 +20,7 @@ public class PanelFg extends JPanel implements PanelSaisieListener
 	{
 		// Configuration
 		this.ctrl = ctrl;
+		this.setPreferredSize( PanelSelection.DIMENSION_TAB );
 		this.setLayout( new FlowLayout(FlowLayout.LEADING) );
 
 		// Création des composants

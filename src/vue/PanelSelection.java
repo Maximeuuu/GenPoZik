@@ -8,12 +8,13 @@ import java.awt.*;
 public class PanelSelection extends JTabbedPane
 {
 	private Controleur ctrl;
+	public static final Dimension DIMENSION_TAB = new Dimension(250,400);
 
 	public PanelSelection( Controleur ctrl )
 	{
 		// Configuration
 		this.ctrl = ctrl;
-		this.setPreferredSize( new Dimension(400,400) );
+		this.setPreferredSize( PanelSelection.DIMENSION_TAB );
 		this.setUI( new CustomTabbedPaneUI() ); //HorizontalTabbedPaneUI
 		this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 
