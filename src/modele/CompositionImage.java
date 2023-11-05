@@ -24,16 +24,27 @@ public class CompositionImage extends BufferedImage
 
 	public void maj()
 	{
-		this.toile = this.createGraphics();
+		//this.toile = this.createGraphics();
+		this.reinitialiser();
 		this.placerBackground();
 		this.placerForeground();
 		this.placerTexte();
-		toile.dispose();
+		//toile.dispose();
 	}
 
 	public BufferedImage getAppercu()
 	{
 		return this;
+	}
+
+	/**
+	 * @author ChatGPT
+	 */
+	public void reinitialiser()
+	{
+		this.toile.setComposite(AlphaComposite.getInstance(AlphaComposite.CLEAR, 0.0f));
+    	this.toile.fillRect(0, 0, this.longueur, this.hauteur);
+    	this.toile.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER));
 	}
 
 	private void placerBackground()
