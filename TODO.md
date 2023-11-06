@@ -19,3 +19,4 @@
 - nom du fichier pour la sauvegarde : auteur-titre-date[-numero].png !!
 - repertoire de sauvegarde -> dans le projet
 - minsize fenetre
+- mode selection de couleurs random
