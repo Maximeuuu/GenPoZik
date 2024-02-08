@@ -5,10 +5,16 @@ Il permet de créer rapidement et facilement de nombreuses images suivant un mê
 
 ---
 
-# Comment exécuter
+# Comment exécuter dans un terminal
 
+## A - Sur Linux
 1. se déplacer dans le projet : ``cd GenPoZik``
-2. compiler : ``javac @option.list @compile.list``
+2. donner les permissions d'exécution : ``chmod u+x genpozik.sh`` (à faire une fois)
+3. exécuter : ``./genposik.sh``
+
+## B - Sur tous les OS
+1. se déplacer dans le projet : ``cd GenPoZik``
+2. compiler : ``javac '@option.list' '@compile.list'``
 3. se déplacer dans le dossier d'exécution : ``cd out``
 4. exécuter : ``java genposik.Controleur``
 
