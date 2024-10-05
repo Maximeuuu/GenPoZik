@@ -21,3 +21,4 @@
 - minsize fenetre
 - mode selection de couleurs random
 - par défaut : valeur alpha du fg : 255 ?
+- bouton reset
