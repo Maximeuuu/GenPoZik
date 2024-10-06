@@ -22,3 +22,11 @@
 - mode selection de couleurs random
 - par défaut : valeur alpha du fg : 255 ?
 - bouton reset
+- choisir les dimensions de l'image (faire un rescale au niveau affichage)
+- proposer affichage taille origine (peut dépasser)
+- loupe / zoom
+- saisie "auto jump"
+- exporter un fichier de configuration
+- palette de couleur intégrée
+- se rappeler pour la session en cours du dossier de sortie / ou mettre dans un dossier par défaut
+- afficher "png" par défaut sur le nom de fichier et la frame
