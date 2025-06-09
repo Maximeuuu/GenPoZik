@@ -6,7 +6,7 @@
 - selecteur de couleur avec pipette
 - deplacer les texte avec la souris
 - valeurs par défaut
-- sauvegarder la config
+- sauvegarder la config (exportation, importation)
 - optimiser le code lorsqu'une image est utilisée pour le background
 - changements de mode de dégradé
 - dégradé sur le FG
@@ -30,3 +30,4 @@
 - palette de couleur intégrée
 - se rappeler pour la session en cours du dossier de sortie / ou mettre dans un dossier par défaut
 - afficher "png" par défaut sur le nom de fichier et la frame
+- selection de fichier pour créer le fichier plutot que selection du dossier + nom
