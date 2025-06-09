@@ -31,3 +31,6 @@
 - se rappeler pour la session en cours du dossier de sortie / ou mettre dans un dossier par défaut
 - afficher "png" par défaut sur le nom de fichier et la frame
 - selection de fichier pour créer le fichier plutot que selection du dossier + nom
+- remplacer les 3 zones de txt par 1 zone mais avec possibilité d'en ajouter (+) pour faire du multiple comme actuellement
+- possibilité de bouger avec la souris ?
+- lorsque la valeur du rgb dépasse 255 : mettre 255 (au lieu de 0)
