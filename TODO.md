@@ -6,8 +6,6 @@
 
 ## En cours
 
-- remplacer les 3 zones de txt par 1 zone mais avec possibilité d'en ajouter (+) pour faire du multiple comme actuellement
-
 - meilleure gestion du scrollbar
 - bords des panels avec marge
 - selecteur de couleur avec pipette
