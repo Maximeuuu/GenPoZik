@@ -5,13 +5,6 @@
 - liste image de modele par défaut
 - lorsque la valeur du rgb dépasse 255 : mettre 255 (semble pas possible avec le SpinnerModel)
 
-## En cours
-
-- V valeurs par défaut
-- minsize fenetre
-- V par défaut : valeur alpha du fg : 255 ?
-
-
 ## A faire
 
 - meilleure gestion du scrollbar

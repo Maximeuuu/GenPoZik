@@ -1,6 +1,9 @@
 package genpozik.vue;
 
 import genpozik.Controleur;
+
+import java.awt.Dimension;
+
 import javax.swing.*;
 
 public class Fenetre extends JFrame
@@ -13,7 +16,10 @@ public class Fenetre extends JFrame
 		// Configuration
 		super();
 		this.ctrl = ctrl;
-		this.setSize( 800,600 );
+		
+		final Dimension TAILLE_MIN_FENETRE = new Dimension(800,500);
+		this.setSize( TAILLE_MIN_FENETRE );
+		this.setMinimumSize( TAILLE_MIN_FENETRE );
 		this.setTitle("GenPoZik");
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
