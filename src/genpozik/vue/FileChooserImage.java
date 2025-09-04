@@ -9,7 +9,6 @@ package genpozik.vue;
 
 import javax.swing.filechooser.*;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 
 import java.io.File;
 

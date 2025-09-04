@@ -3,11 +3,11 @@
 ## Plus tard
 
 - liste image de modele par défaut
+- lorsque la valeur du rgb dépasse 255 : mettre 255 (semble pas possible avec le SpinnerModel)
 
 ## En cours
 
-- lorsque la valeur du rgb dépasse 255 : mettre 255 (au lieu de 0)
-- valeurs par défaut
+- V valeurs par défaut
 - minsize fenetre
 - V par défaut : valeur alpha du fg : 255 ?
 
@@ -41,3 +41,4 @@
 - se rappeler pour la session en cours du dossier de sortie / ou mettre dans un dossier par défaut
 - afficher "png" par défaut sur le nom de fichier et la frame
 - selection de fichier pour créer le fichier plutot que selection du dossier + nom
+- organiser le code (package vue) en 3 parties (BG, FG, TXT) + composants

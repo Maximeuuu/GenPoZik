@@ -3,8 +3,6 @@ package genpozik.vue;
 import genpozik.modele.Texte;
 import genpozik.vue.event.*;
 
-import java.util.regex.Pattern;
-import javax.swing.text.*;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.event.*;
@@ -13,35 +11,35 @@ public class SaisieTexte extends JPanel implements DocumentListener, PanelSaisie
 {
 	private PanelSaisieListener panelSaisieListener;
 
-	private JTextField txtTexte;
-	private JTextField txtTaille;
-	private SaisieRGB  saisieRGB;
-	private SaisiePos  saisiePosition;
+	private JTextField   txtTexte;
+	private SaisieNombre saisieTaille;
+	private SaisieRGB    saisieRGB;
+	private SaisiePos    saisiePosition;
 
-    public SaisieTexte()
+	public SaisieTexte()
 	{
 		// Configuration
-        this.setLayout( new GridLayout(4, 1) );
+		this.setLayout( new GridLayout(4, 1) );
 		this.setBackground( new Color(255,255,255,122) );
 
 		// Creation des composants
-        this.txtTexte  = new JTextField();
-        this.txtTaille = new JTextField();
-        this.saisieRGB = new SaisieRGB();
+		this.txtTexte       = new JTextField();
+		this.saisieTaille   = new SaisieNombre(30, 0, 1000);
+		this.saisieRGB      = new SaisieRGB();
 		this.saisiePosition = new SaisiePos();
 
 		// Positionnement des composants
 		this.add( panelSaisie( "Texte", this.txtTexte ) );
-		this.add( panelSaisie( "Taille", this.txtTaille ) );
+		this.add( panelSaisie( "Taille", this.saisieTaille ) );
 		this.add( panelSaisie( "Couleur", this.saisieRGB ) );
 		this.add( panelSaisie( "Position", this.saisiePosition ) );
 
 		// Activation des composants
 		this.txtTexte.getDocument().addDocumentListener(this);
-        this.txtTaille.getDocument().addDocumentListener(this);
-        this.saisieRGB.setPanelSaisieListener(this);
+		this.saisieTaille.setPanelSaisieListener(this);
+		this.saisieRGB.setPanelSaisieListener(this);
 		this.saisiePosition.setPanelSaisieListener(this);
-    }
+	}
 
 	private JPanel panelSaisie( String type, Component composant )
 	{
@@ -54,15 +52,11 @@ public class SaisieTexte extends JPanel implements DocumentListener, PanelSaisie
 		return panelTmp;
 	}
 
-    public Texte getTexte()
+	public Texte getTexte()
 	{
 		Texte texte = new Texte( this.txtTexte.getText() );
-		try
-		{
-			texte.setTaille( Integer.parseInt( this.txtTaille.getText() ) );
-		}
-		catch( Exception e ){}
 
+		texte.setTaille( this.saisieTaille.getValeur() );
 		texte.setCouleur( this.saisieRGB.getCouleur() );
 		texte.setPosition( this.saisiePosition.getPosition() );
 		return texte;
@@ -80,23 +74,20 @@ public class SaisieTexte extends JPanel implements DocumentListener, PanelSaisie
 	}
 
 	@Override
-    public void insertUpdate(DocumentEvent e)
+	public void insertUpdate(DocumentEvent e)
 	{
-		this.panelSaisieListener.valueChanged();
-        // Le texte a été inséré
-    }
+		this.panelSaisieListener.valueChanged(); // Le texte a été inséré
+	}
 
-    @Override
-    public void removeUpdate(DocumentEvent e)
+	@Override
+	public void removeUpdate(DocumentEvent e)
 	{
-		this.panelSaisieListener.valueChanged();
-        // Le texte a été supprimé
-    }
+		this.panelSaisieListener.valueChanged(); // Le texte a été supprimé
+	}
 
-    @Override
-    public void changedUpdate(DocumentEvent e)
+	@Override
+	public void changedUpdate(DocumentEvent e)
 	{
 		this.panelSaisieListener.valueChanged();
-		//fireActionPerformed
-    }
+	}
 }
