@@ -15,8 +15,8 @@ Il permet de créer rapidement et facilement de nombreuses images suivant un mê
 ## B - Sur tous les OS
 1. se déplacer dans le projet : ``cd GenPoZik``
 2. compiler : ``javac '@option.list' '@compile.list'``
-3. se déplacer dans le dossier d'exécution : ``cd out``
-4. exécuter : ``java genposik.Controleur``
+3. se déplacer dans le dossier d'exécution : ``cd class``
+4. exécuter : ``java genpozik.Controleur``
 
 ---
 

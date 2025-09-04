@@ -83,9 +83,10 @@ public class CompositionImage extends BufferedImage
 
 	private void placerTexte()
 	{
-		this.placerTexte( this.proprietes.getAuteur() );
-		this.placerTexte( this.proprietes.getTitre() );
-		this.placerTexte( this.proprietes.getDate() );
+		for( Texte texte : this.proprietes.getEnsTexte() )
+		{
+			this.placerTexte( texte );
+		}
 	}
 
 	private void placerTexte( Texte texte )

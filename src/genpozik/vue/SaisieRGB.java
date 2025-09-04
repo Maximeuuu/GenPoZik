@@ -1,6 +1,6 @@
 package genpozik.vue;
 
-import genpozik.vue.evenement.*;
+import genpozik.vue.event.*;
 
 import java.util.regex.Pattern;
 import javax.swing.text.*;

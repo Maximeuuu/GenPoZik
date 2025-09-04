@@ -1,7 +1,7 @@
 package genpozik.vue;
 
 import genpozik.modele.Texte;
-import genpozik.vue.evenement.*;
+import genpozik.vue.event.*;
 
 import java.util.regex.Pattern;
 import javax.swing.text.*;
@@ -18,21 +18,19 @@ public class SaisieTexte extends JPanel implements DocumentListener, PanelSaisie
 	private SaisieRGB  saisieRGB;
 	private SaisiePos  saisiePosition;
 
-    public SaisieTexte( String titre )
+    public SaisieTexte()
 	{
 		// Configuration
-        this.setLayout( new GridLayout(5, 1) );
+        this.setLayout( new GridLayout(4, 1) );
 		this.setBackground( new Color(255,255,255,122) );
 
 		// Creation des composants
-        JLabel lbl = new JLabel( titre );
         this.txtTexte  = new JTextField();
         this.txtTaille = new JTextField();
         this.saisieRGB = new SaisieRGB();
 		this.saisiePosition = new SaisiePos();
 
 		// Positionnement des composants
-        this.add(lbl);
 		this.add( panelSaisie( "Texte", this.txtTexte ) );
 		this.add( panelSaisie( "Taille", this.txtTaille ) );
 		this.add( panelSaisie( "Couleur", this.saisieRGB ) );

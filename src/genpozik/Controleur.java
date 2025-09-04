@@ -10,7 +10,7 @@ public class Controleur
 {
 	private Fenetre vue;
 	private GenerateurImage modele;
-	public static final String REP_IMAGE = "../data/";
+	public static final String REP_IMAGE = "data/";
 
 	public Controleur()
 	{
@@ -37,15 +37,13 @@ public class Controleur
 
 	public void majIHM()
 	{
-		System.out.println("maj ihm");
+		//System.out.println("maj ihm"); //DEBUG
 		this.vue.maj();
 	}
 
-	public void majTxt( Texte texteA, Texte texteT, Texte texteD )
+	public void majTxt( java.util.List<Texte> ensTexte )
 	{
-		this.modele.setAuteur( texteA );
-		this.modele.setTitre( texteT );
-		this.modele.setDate( texteD );
+		this.modele.setTextes( ensTexte );
 		this.majIHM();
 	}
 

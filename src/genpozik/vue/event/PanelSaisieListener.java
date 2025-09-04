@@ -1,4 +1,4 @@
-package genpozik.vue.evenement;
+package genpozik.vue.event;
 
 public interface PanelSaisieListener
 {
