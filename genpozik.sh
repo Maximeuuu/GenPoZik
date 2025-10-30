@@ -1,3 +1,3 @@
 javac @option.list @compile.list
-cd class
+cd bin
 java genpozik.Controleur
